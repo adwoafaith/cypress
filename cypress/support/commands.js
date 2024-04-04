@@ -39,8 +39,8 @@
 
   //custom command for clicking on link using label
 
-  Cypress.Commands.add("clickLink",(label) =>{
-    cy.get('a').contains(label).click({force:true});
+  Cypress.Commands.add('clickLink',(label) =>{
+    cy.get('a').contains(label).click({force:true})
   })
 
   //overwriting contains() function
@@ -64,4 +64,10 @@
     cy.get("#Email").type(email)
     cy.get("#Password").type(password)
     cy.get("button[class='button-1 login-button']").click()
+  })
+
+  Cypress.Commands.add('login_beksfel',(email,password)=>{
+    cy.get("input[placeholder='Email'][type='email']").type(email)
+    cy.xpath("//div[@class='flex justify-center items-center absolute top-0 w-full md:w-[600px] h-full p-[25px] bg-[#ecf0f3] transition-all duration-[1250ms] z-[200] md:left-0']//input[@placeholder='Password']").type(password)
+    cy.get("div[class='flex justify-center items-center absolute top-0 w-full md:w-[600px] h-full p-[25px] bg-[#ecf0f3] transition-all duration-[1250ms] z-[200] md:left-0'] button[class='auth-button']").click()
   })
