@@ -27,33 +27,41 @@
 /// <reference types="Cypress" />
 /// <reference types="cypress-xpath" />
 
-const { filter } = require("cypress/types/bluebird");
-const { text } = require("express");
+// const { filter } = require("cypress/types/bluebird");
+// const { text } = require("express");
 
-Cypress.on('uncaught:exception', (err, runnable) => {
-    // returning false here prevents Cypress from
-    // failing the test
-    return false
-  })
+// Cypress.on('uncaught:exception', (err, runnable) => {
+//     // returning false here prevents Cypress from
+//     // failing the test
+//     return false
+//   })
 
 
   //custom command for clicking on link using label
 
   Cypress.Commands.add("clickLink",(label) =>{
-    cy.get('a').contains(label).click();
+    cy.get('a').contains(label).click({force:true});
   })
 
   //overwriting contains() function
 
-  Cypress.Commands.overwrite('contains', (originalFn, subject, text, filter, options = {}) => {
-    // Determine if the filter argument was passed
-    if (typeof text === 'object') {
-        options = text;
-        text = filter;
-        filter = undefined;
-    }
-    // Ensure options object is defined
-    options = options || {};
-    options.matchCase = false;
-    return originalFn(subject, text, filter, options);
-});
+//   Cypress.Commands.overwriteQuery('contains', (originalFn, subject, filter,text, options = {}) => {
+//     // Determine if the filter argument was passed
+//     if (typeof text === 'object') {
+//         options = text
+//         text = filter
+//         filter = undefined
+//     }
+//     // Ensure options object is defined
+    
+//     options.matchCase = false
+
+//     return originalFn(subject,filter,text, options)
+// });
+
+  //login custom command
+  Cypress.Commands.add('login_command',(email,password) =>{
+    cy.get("#Email").type(email)
+    cy.get("#Password").type(password)
+    cy.get("button[class='button-1 login-button']").click()
+  })
