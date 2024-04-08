@@ -66,6 +66,7 @@
     cy.get("button[class='button-1 login-button']").click()
   })
 
+  //login custom command
   Cypress.Commands.add('login_beksfel',(email,password)=>{
     cy.get("input[placeholder='Email'][type='email']").type(email)
     cy.xpath("//div[@class='flex justify-center items-center absolute top-0 w-full md:w-[600px] h-full p-[25px] bg-[#ecf0f3] transition-all duration-[1250ms] z-[200] md:left-0']//input[@placeholder='Password']").type(password)
