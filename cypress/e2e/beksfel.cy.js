@@ -54,7 +54,10 @@ describe('testing the Beskful app', () =>{
 
     })
     
-        
+      it('logout functionality',() =>{
+        cy.get("button[class='absolute bottom-0 p-7 flex justify-start items-center text-xl space-x-2 hover:text-blue-400'] span[class='text-base']").click()
+        cy.url().should('contain','beksfel-app.netlify.app')
+      })  
     })
 
 
