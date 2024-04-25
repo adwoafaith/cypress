@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-04-22T09:23:27.710Z",
+    "end": "2024-04-22T09:24:23.401Z",
+    "duration": 55691,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ce5d2d6d-80a4-40db-905f-ff6cdb059cfd",
+      "title": "",
+      "fullFile": "cypress\\e2e\\fileUpload.cy.js",
+      "file": "cypress\\e2e\\fileUpload.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1054c7f4-1584-4b56-9c59-29025baa6e21",
+          "title": "cypress file upload",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "file upload-shadow Dom",
+              "fullTitle": "cypress file upload file upload-shadow Dom",
+              "timedOut": null,
+              "duration": 50254,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\fileUpload.cy.js\\\\cypress file upload -- file upload-shadow Dom (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.visit(\"https://www.htmlelements.com/demos/fileupload/shadow-dom/index.htm\");\ncy.get(\"smart-file-upload:nth-child(1) > div:nth-child(1) > div:nth-child(1) > smart-button:nth-child(1) > button:nth-child(1)\", {\n  includeShodowDom: true\n}).attachFile('ManualtestingNotes.pdf');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `smart-file-upload:nth-child(1) > div:nth-child(1) > div:nth-child(1) > smart-button:nth-child(1) > button:nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `smart-file-upload:nth-child(1) > div:nth-child(1) > div:nth-child(1) > smart-button:nth-child(1) > button:nth-child(1)`, but never found it.\n    at Context.eval (webpack://cypress-automation/./cypress/e2e/fileUpload.cy.js:39:11)",
+                "diff": null
+              },
+              "uuid": "f5577648-61cc-43cb-acd0-e78e3af2c3ad",
+              "parentUUID": "1054c7f4-1584-4b56-9c59-29025baa6e21",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f5577648-61cc-43cb-acd0-e78e3af2c3ad"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 50254,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

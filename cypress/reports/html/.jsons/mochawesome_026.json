@@ -1,0 +1,186 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-04-22T09:31:31.288Z",
+    "end": "2024-04-22T09:31:32.218Z",
+    "duration": 930,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 4,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "68256a84-1513-4968-bc4c-c9e327e52ad0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\verificationEmail.cy.js",
+      "file": "cypress\\e2e\\verificationEmail.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "940dc4f3-19cd-4d13-ad66-fcbd1205a844",
+          "title": "user sign up test with mailslurp plugin",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "01 - can load the demo application",
+              "fullTitle": "user sign up test with mailslurp plugin 01 - can load the demo application",
+              "timedOut": null,
+              "duration": 854,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\verificationEmail.cy.js\\\\user sign up test with mailslurp plugin -- 01 - can load the demo application -- before all hook (failed).png\"\n    ]\n  ]\n}",
+              "code": "// get wrapped email address and assert contains a mailslurp email address\nexpect(this.emailAddress).to.contain('@mailslurp');\n// visit the demo application\ncy.visit('https://playground.mailslurp.com');\ncy.title().should('contain', 'React App');",
+              "err": {
+                "message": "Error: Error no MailSlurp API Key. Please either pass the mailslurp command a valid Config object or set the `CYPRESS_MAILSLURP_API_KEY` environment variable to the value of your MailSlurp API Key to use the MailSlurp Cypress plugin. Create a free account at https://app.mailslurp.com/sign-up/. See https://docs.cypress.io/guides/guides/environment-variables#Option-3-CYPRESS_ for more information.\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `user sign up test with mail...`",
+                "estack": "Error: Error no MailSlurp API Key. Please either pass the mailslurp command a valid Config object or set the `CYPRESS_MAILSLURP_API_KEY` environment variable to the value of your MailSlurp API Key to use the MailSlurp Cypress plugin. Create a free account at https://app.mailslurp.com/sign-up/. See https://docs.cypress.io/guides/guides/environment-variables#Option-3-CYPRESS_ for more information.\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `user sign up test with mail...`\n    at Context.eval (webpack://cypress-automation/./node_modules/cypress-mailslurp/dist/cypress-mailslurp.esm.js:24:0)",
+                "diff": null
+              },
+              "uuid": "8656f9c1-9920-4ecf-9e2f-2d1f4593316a",
+              "parentUUID": "940dc4f3-19cd-4d13-ad66-fcbd1205a844",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "02 - can sign up using email address",
+              "fullTitle": "user sign up test with mailslurp plugin 02 - can sign up using email address",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// click sign up and fill out the form\ncy.get('[data-test=sign-in-create-account-link]').click();\n// use the email address and a test password\ncy.get('[name=email]').type(this.emailAddress).trigger('change');\ncy.get('[name=password]').type('test-password').trigger('change');\n// click the submit button\ncy.get('[data-test=sign-up-create-account-button]').click();",
+              "err": {},
+              "uuid": "3e27d468-f75f-4065-84a6-414461a50569",
+              "parentUUID": "940dc4f3-19cd-4d13-ad66-fcbd1205a844",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "03 - can receive confirmation code by email",
+              "fullTitle": "user sign up test with mailslurp plugin 03 - can receive confirmation code by email",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// app will send user an email containing a code, use mailslurp to wait for the latest email\ncy.mailslurp()\n// use inbox id and a timeout of 30 seconds\n.then(mailslurp => mailslurp.waitForLatestEmail(this.inboxId, 30000, true))\n// extract the confirmation code from the email body\n.then(email => /.*verification code is (\\d{6}).*/.exec(email.body)[1])\n// fill out the confirmation form and submit\n.then(code => {\n  cy.get('[name=code]').type(code).trigger('change');\n  cy.get('[data-test=confirm-sign-up-confirm-button]').click();\n});",
+              "err": {},
+              "uuid": "2c7bd4c5-3ee1-4f05-9e6b-ea0c312e0cc8",
+              "parentUUID": "940dc4f3-19cd-4d13-ad66-fcbd1205a844",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "04 - can sign in with confirmed account",
+              "fullTitle": "user sign up test with mailslurp plugin 04 - can sign in with confirmed account",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// use the email address and a test password\ncy.get('[data-test=username-input]').type(this.emailAddress).trigger('change');\ncy.get('[data-test=sign-in-password-input]').type('test-password').trigger('change');\n// click the submit button\ncy.get('[data-test=sign-in-sign-in-button]').click();",
+              "err": {},
+              "uuid": "4f6c9a81-9247-4b70-b181-814516840f88",
+              "parentUUID": "940dc4f3-19cd-4d13-ad66-fcbd1205a844",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "05 - can see welcome screen",
+              "fullTitle": "user sign up test with mailslurp plugin 05 - can see welcome screen",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// click sign up and fill out the form\ncy.get('h1').should('contain', 'Welcome');",
+              "err": {},
+              "uuid": "f11b4575-0b81-47f1-8743-f6a290134705",
+              "parentUUID": "940dc4f3-19cd-4d13-ad66-fcbd1205a844",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8656f9c1-9920-4ecf-9e2f-2d1f4593316a"
+          ],
+          "pending": [],
+          "skipped": [
+            "3e27d468-f75f-4065-84a6-414461a50569",
+            "2c7bd4c5-3ee1-4f05-9e6b-ea0c312e0cc8",
+            "4f6c9a81-9247-4b70-b181-814516840f88",
+            "f11b4575-0b81-47f1-8743-f6a290134705"
+          ],
+          "duration": 854,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

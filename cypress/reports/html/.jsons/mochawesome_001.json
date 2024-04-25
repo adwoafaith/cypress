@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-04-22T09:16:32.173Z",
+    "end": "2024-04-22T09:17:18.942Z",
+    "duration": 46769,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "94e60aa5-7103-40a3-9271-0897353c3062",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Assertions.cy.js",
+      "file": "cypress\\e2e\\Assertions.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d2bd1f27-507e-40f9-b0c3-fa6ec0658e49",
+          "title": "assertions demo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "implicit assertion",
+              "fullTitle": "assertions demo implicit assertion",
+              "timedOut": null,
+              "duration": 40430,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//write the codes\ncy.visit('https://opensource-demo.orangehrmlive.com/web/index.php');\n// cy.url().should('include','demo.orangehrmlive.com')\n// cy.url().should('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')\n// cy.url().should('contain','index.php')\n//different approach\n// cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php')\n// cy.url().should('include','demo.orangehrmlive.com')\n// .should('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')\n// .should('contain','index.php')\n//another option\n// cy.url().should('include','demo.orangehrmlive.com')\n// .and('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')\n// .and('contain','index.php')\n//another option\ncy.url().should('include', 'demo.orangehrmlive.com').and('eq', 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login').and('not.contain', 'adwoaberries');\n//capturing the title\ncy.title().should('include', 'Orange').and('eql', 'OrangeHRM').and('contain', 'HRM');\n//cy.get('.orangehrm-login-forgot > .oxd-text').click()\n//checking the presence of a logo and its visibility\ncy.get('.orangehrm-login-branding > img').should('be.visible').and('exist');\n//checking total number of linkes\ncy.xpath(\"//a\").should('have.length', '5');\n//provide a value in the text box\ncy.get(\"input[placeholder='Username']\").type('Admin');\ncy.get(\"input[placeholder='Password']\").type(\"admin123\");",
+              "err": {},
+              "uuid": "c40d9b26-fc8f-4204-850c-97029675960f",
+              "parentUUID": "d2bd1f27-507e-40f9-b0c3-fa6ec0658e49",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c40d9b26-fc8f-4204-850c-97029675960f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 40430,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

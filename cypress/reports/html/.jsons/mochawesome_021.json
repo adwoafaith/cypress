@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-04-22T09:28:41.142Z",
+    "end": "2024-04-22T09:29:20.709Z",
+    "duration": 39567,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "926caa54-cc6c-4303-a067-e8d7bbcaa213",
+      "title": "",
+      "fullFile": "cypress\\e2e\\pageObjectModel.cy.js",
+      "file": "cypress\\e2e\\pageObjectModel.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "daaf17e0-02a6-4575-98f1-1dbed283a763",
+          "title": "page object model",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "page object model demo2",
+              "fullTitle": "page object model page object model demo2",
+              "timedOut": null,
+              "duration": 34711,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('orangehrm3').then(data => {\n  const myLogin = new _loginPage2.default();\n  myLogin.setUserName(data.username);\n  myLogin.setPassword(data.password);\n  myLogin.clickSubmit();\n  myLogin.verifyLogin();\n});",
+              "err": {},
+              "uuid": "9431a358-1a17-444e-86ab-fce8edde43b0",
+              "parentUUID": "daaf17e0-02a6-4575-98f1-1dbed283a763",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9431a358-1a17-444e-86ab-fce8edde43b0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 34711,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

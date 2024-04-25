@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-04-22T09:29:30.597Z",
+    "end": "2024-04-22T09:29:42.713Z",
+    "duration": 12116,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c7c1b0be-02ea-4746-8a6d-1e45563a3d63",
+      "title": "",
+      "fullFile": "cypress\\e2e\\radiobutton.cy.js",
+      "file": "cypress\\e2e\\radiobutton.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "84357c3c-3e95-4cec-a5d1-a4878d29eda6",
+          "title": "radio button automation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "radio button",
+              "fullTitle": "radio button automation radio button",
+              "timedOut": null,
+              "duration": 5208,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//checking the visibility of the radio buttons\ncy.visit(\"https://practice.expandtesting.com/radio-buttons\");\ncy.get(\"#basketball\").should(\"be.visible\");\ncy.get(\"#football\").should(\"be.visible\");\ncy.get(\"#tennis\").should(\"be.visible\");\n//checking te baseball button and unchecking the others\ncy.get(\"#basketball\").check().should(\"be.checked\");\ncy.get(\"#football\").should(\"not.be.checked\");\ncy.get(\"#tennis\").should(\"not.be.checked\");\n//checking the football button and unchecking the others\ncy.get(\"#football\").check().should(\"be.checked\");\ncy.get(\"#basketball\").should(\"not.be.checked\");\ncy.get(\"#tennis\").should(\"not.be.checked\");\n//checking the tennis button and unchecking the others\ncy.get(\"#tennis\").check().should(\"be.checked\");\ncy.get(\"#basketball\").should(\"not.be.checked\");\ncy.get(\"#football\").should(\"not.be.checked\");\n//checking the check boxes\ncy.visit(\"https://practice.expandtesting.com/checkboxes\");\ncy.get(\"#checkbox1\").should(\"be.visible\");\ncy.get(\"#checkbox2\").should(\"be.visible\");\n// //selecting single check box\ncy.get(\"#checkbox1\").check().should(\"be.checked\");\n// //unselecting the checkbox1\ncy.get(\"#checkbox1\").uncheck().should(\"not.be.checked\");\n//selecting all the checkboxes\ncy.get(\"input.form-check-input[type='checkbox']\").check().should(\"be.checked\");\ncy.get(\"input.form-check-input[type='checkbox']\").uncheck().should(\"not.be.checked\");\n//selecting the first and the last check boxes\ncy.get(\"input.form-check-input[type='checkbox']\").first().check();\ncy.get(\"input.form-check-input[type='checkbox']\").last().check();",
+              "err": {},
+              "uuid": "11622635-f682-4ed5-a44e-0812c6fc54ca",
+              "parentUUID": "84357c3c-3e95-4cec-a5d1-a4878d29eda6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "11622635-f682-4ed5-a44e-0812c6fc54ca"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5208,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

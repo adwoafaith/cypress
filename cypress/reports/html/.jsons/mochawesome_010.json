@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 3,
+    "failures": -3,
+    "start": "2024-04-22T09:21:45.671Z",
+    "end": "2024-04-22T09:21:59.548Z",
+    "duration": 13877,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 75,
+    "other": 3,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "da7a3a2d-f8e4-44ad-bc27-e99abb49be99",
+      "title": "",
+      "fullFile": "cypress\\e2e\\dropdowns.cy.js",
+      "file": "cypress\\e2e\\dropdowns.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "43c35874-2e47-4de4-8a44-a6412c1def70",
+          "title": "drop-down automation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "drop-down with select",
+              "fullTitle": "drop-down automation drop-down with select",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://www.zoho.com/commerce/free-demo.html\");\n//if the dropdown has a selector component the we use\n//have.value\ncy.get('#zcf_address_country').select('Italy').should('have.value', 'Italy');",
+              "err": {},
+              "uuid": "cbc0ad70-32b9-41c6-a32f-77fc99dbabd9",
+              "parentUUID": "43c35874-2e47-4de4-8a44-a6412c1def70",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "drop-down with select",
+              "fullTitle": "drop-down automation drop-down with select",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://www.dummyticket.com/dummy-ticket-for-visa-application/\");\ncy.get('#select2-billing_country-container').click();\ncy.get(\"input[role='combobox']\").type('Italy').type('{enter}');\n//checking if the value i am selecting is part of the drop down \n//if the dropdown doesn't have selector component or element, then we use\n//have.text\ncy.get('#select2-billing_country-container').should('have.text', 'Italy');",
+              "err": {},
+              "uuid": "abd162b6-7975-4b65-b9ab-0a78da00d966",
+              "parentUUID": "43c35874-2e47-4de4-8a44-a6412c1def70",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "auto suggested drop-down",
+              "fullTitle": "drop-down automation auto suggested drop-down",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://www.wikipedia.org/\");\n// so with this code we are trying to type delhi in the input box\ncy.get(\"#searchInput\").type('Delhi');\n//when the input box is being displayed, it has auto suggested name\n//also begining with a d or being similar to what we have tested\n// so we would have to capture all the listed options and pass\n// the actual word we are looking for into it\n//being delhi\n// with this the auto suggested ones are static\n//so if they are 5 they are 5\ncy.get(\".suggestion-title\").contains('Delhi').click();",
+              "err": {},
+              "uuid": "97878c5e-fbed-4b36-86d7-41ed84e5194b",
+              "parentUUID": "43c35874-2e47-4de4-8a44-a6412c1def70",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "dynamic drop-down",
+              "fullTitle": "drop-down automation dynamic drop-down",
+              "timedOut": null,
+              "duration": 6839,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.google.com/\");\ncy.get('#APjFqb').type(\"cypress automation\");\n//after typing our query lets wait for a few seconds before we perform other options\ncy.wait(3000);\n//so we would have to get one common locator that will be able to \n//capture all the options\n//we will use the keyword each \n//because it is dynamic, contain will not always work for every\n//senario\n//it takes 3 parameters\n//1.list or an array (alll the elemets that are being captured)\n//2.index (every element in the array has an index, hence index)\n//3. actual element\ncy.get(\"div.wM6W7d>span\").should(\"have.length\", 13);\ncy.get(\"div.wM6W7d>span\").each(($el, index, $list) => {\n  if ($el.text == 'cypress automation') {\n    cy.wrap($el).click();\n  }\n});\n//checking to see if the results provided will have the value we provided\n// in the search box\ncy.get(\"#APjFqb\").should('have.value', 'cypress automation');",
+              "err": {},
+              "uuid": "a2106d55-e80b-44a6-9753-d4c9029ebb90",
+              "parentUUID": "43c35874-2e47-4de4-8a44-a6412c1def70",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a2106d55-e80b-44a6-9753-d4c9029ebb90"
+          ],
+          "failures": [],
+          "pending": [
+            "cbc0ad70-32b9-41c6-a32f-77fc99dbabd9",
+            "abd162b6-7975-4b65-b9ab-0a78da00d966",
+            "97878c5e-fbed-4b36-86d7-41ed84e5194b"
+          ],
+          "skipped": [],
+          "duration": 6839,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

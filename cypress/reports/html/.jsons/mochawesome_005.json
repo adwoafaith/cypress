@@ -1,0 +1,175 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 0,
+    "pending": 1,
+    "failures": 2,
+    "start": "2024-04-22T09:19:24.450Z",
+    "end": "2024-04-22T09:19:55.736Z",
+    "duration": 31286,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 25,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fee5bbe8-b9ee-41e4-a7b9-e7f83078859c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\beksfel.cy.js",
+      "file": "cypress\\e2e\\beksfel.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e0861db5-7061-4ad3-bb2f-4197c3b0a636",
+          "title": "testing the Beskful app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "register",
+              "fullTitle": "testing the Beskful app register",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "//checking for logo\ncy.get(\"[alt='brand-logo']\").should('be.visible').and('exist');\n//verify the registration page\ncy.get(\"body > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > h2:nth-child(1)\").should('contain', 'Hello');\ncy.get(\".auth-button.switch-btn\").click();\ncy.get(\"input[placeholder='Firstname']\").type('adwoa');\ncy.get(\"input[placeholder='Surname']\").type('buabin');\ncy.get(\"input[placeholder='Email'][type='text']\").type('adwoafaith49@gmail.com');\ncy.get(\"div[class='relative flex justify-center items-center md:absolute top-0 w-auto md:w-[600px] h-full bg-[#ecf0f3] transition-all duration-[1250ms] z-[100] md:left-[calc(100%-600px)]'] input[placeholder='Password']\").type('Mytesting055!');\ncy.xpath(\"//body/div/div/div/div/div[1]/form[1]/div[1]/span[1]//*[name()='svg']\").click();\ncy.get(\"input[placeholder='Confirm Password']\").type('Mytesting055!');",
+              "err": {},
+              "uuid": "5f23decd-cb1a-459c-b95d-d8ce1716fd2c",
+              "parentUUID": "e0861db5-7061-4ad3-bb2f-4197c3b0a636",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "validate the user that logged in",
+              "fullTitle": "testing the Beskful app validate the user that logged in",
+              "timedOut": null,
+              "duration": 12351,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\beksfel.cy.js\\\\testing the Beskful app -- validate the user that logged in (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.wait(5000);\ncy.url().should('contain', \"https://beksfel-app.netlify.app/user-dashboard\");\nlet actualUser = 'adwoa buabin';\ncy.get(\".text-lg.font-semibold\").then(e => {\n  let expectedUser = e.text();\n  expect(expectedUser).to.equal(actualUser);\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'https://beksfel-app.netlify.app/' to include 'https://beksfel-app.netlify.app/user-dashboard'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'https://beksfel-app.netlify.app/' to include 'https://beksfel-app.netlify.app/user-dashboard'\n    at Context.eval (webpack://cypress-automation/./cypress/e2e/beksfel.cy.js:29:17)",
+                "diff": null
+              },
+              "uuid": "90d3386e-5bb8-4fcd-9355-140cfa52a78e",
+              "parentUUID": "e0861db5-7061-4ad3-bb2f-4197c3b0a636",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "validating the url's on the dashboard",
+              "fullTitle": "testing the Beskful app validating the url's on the dashboard",
+              "timedOut": null,
+              "duration": 6937,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\beksfel.cy.js\\\\testing the Beskful app -- validating the url's on the dashboard (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get(\"body > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > button:nth-child(1)\").should('contain', 'Dashboard');\n//validating the existance of the logo\ncy.get(\"img[alt='brand-logo'][loading='lazy'][width='120']\").should('be.visible').and('exist');\n//validating the invoice button\ncy.get(\"body > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > button:nth-child(1) > span:nth-child(2)\").should('contain', 'Invoice');\ncy.get(\"body > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > button:nth-child(1) > span:nth-child(2)\").click();\ncy.url().should('contain', 'https://beksfel-app.netlify.app/invoice/me');\n//validate the edit profile element\ncy.get(\"body > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > button:nth-child(1) > span:nth-child(2)\").should('contain', \"Edit Profile\");\ncy.get(\"body > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > button:nth-child(1) > span:nth-child(2)\").click();\ncy.url().should('contain', 'https://beksfel-app.netlify.app/edit-profile');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `body > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > button:nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `body > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > button:nth-child(1)`, but never found it.\n    at Context.eval (webpack://cypress-automation/./cypress/e2e/beksfel.cy.js:38:159)",
+                "diff": null
+              },
+              "uuid": "742e42a2-60d7-4c8e-9990-67f6479264c8",
+              "parentUUID": "e0861db5-7061-4ad3-bb2f-4197c3b0a636",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "logout functionality",
+              "fullTitle": "testing the Beskful app logout functionality",
+              "timedOut": null,
+              "duration": 7424,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\beksfel.cy.js\\\\testing the Beskful app -- logout functionality (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get(\"button[class='absolute bottom-0 p-7 flex justify-start items-center text-xl space-x-2 hover:text-blue-400'] span[class='text-base']\").click();\ncy.url().should('contain', 'beksfel-app.netlify.app');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `button[class='absolute bottom-0 p-7 flex justify-start items-center text-xl space-x-2 hover:text-blue-400'] span[class='text-base']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `button[class='absolute bottom-0 p-7 flex justify-start items-center text-xl space-x-2 hover:text-blue-400'] span[class='text-base']`, but never found it.\n    at Context.eval (webpack://cypress-automation/./cypress/e2e/beksfel.cy.js:58:11)",
+                "diff": null
+              },
+              "uuid": "86d6ba7a-8b63-4d67-b73d-42ad2ba4bc78",
+              "parentUUID": "e0861db5-7061-4ad3-bb2f-4197c3b0a636",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "90d3386e-5bb8-4fcd-9355-140cfa52a78e",
+            "742e42a2-60d7-4c8e-9990-67f6479264c8",
+            "86d6ba7a-8b63-4d67-b73d-42ad2ba4bc78"
+          ],
+          "pending": [
+            "5f23decd-cb1a-459c-b95d-d8ce1716fd2c"
+          ],
+          "skipped": [],
+          "duration": 26712,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

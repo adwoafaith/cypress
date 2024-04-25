@@ -72,3 +72,15 @@
     cy.xpath("//div[@class='flex justify-center items-center absolute top-0 w-full md:w-[600px] h-full p-[25px] bg-[#ecf0f3] transition-all duration-[1250ms] z-[200] md:left-0']//input[@placeholder='Password']").type(password)
     cy.get("div[class='flex justify-center items-center absolute top-0 w-full md:w-[600px] h-full p-[25px] bg-[#ecf0f3] transition-all duration-[1250ms] z-[200] md:left-0'] button[class='auth-button']").click()
   })
+
+  Cypress.Commands.add("myItems",(selector) =>{
+    cy.get("#tbodyid")
+  })
+
+  Cypress.Commands.add("Cart",(selector) =>{
+    cy.get(`${selector}[type='text']`)
+  })
+
+  Cypress.Commands.add("category",(selector) =>{
+    cy.get(`[${selector}="byCat('phone')]"`).click()
+  })

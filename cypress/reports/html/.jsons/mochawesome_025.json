@@ -1,0 +1,186 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 4,
+    "failures": -3,
+    "start": "2024-04-22T09:31:12.324Z",
+    "end": "2024-04-22T09:31:21.352Z",
+    "duration": 9028,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 80,
+    "other": 4,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e23f8806-1d58-48cf-88e6-569ba9aeaa16",
+      "title": "",
+      "fullFile": "cypress\\e2e\\table.cy.js",
+      "file": "cypress\\e2e\\table.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "496c980a-730b-40ed-9190-645a044c204f",
+          "title": "Handle tables",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "check number of rows and columns",
+              "fullTitle": "Handle tables check number of rows and columns",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.get(\"table.table-bordered.table-hover tbody tr\").should(\"have.length\", 10);\ncy.get(\"table.table-bordered.table-hover thead tr td\").should('have.length', 7);",
+              "err": {},
+              "uuid": "ed4feda1-e3cc-40f7-8702-d6aa7683e5d9",
+              "parentUUID": "496c980a-730b-40ed-9190-645a044c204f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "checking data in a cell",
+              "fullTitle": "Handle tables checking data in a cell",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "//lets say i want to check if\n// on the fifth row and third column contains a particular element like email \ncy.get(\"table[class ='table table-bordered table-hover']>tbody>tr:nth-child(5)>td:nth-child(3 \").should('contain', \"hfgjhgjgjggj@gmail.com\");",
+              "err": {},
+              "uuid": "163ae02b-2147-490f-ba9e-4afb6f70687d",
+              "parentUUID": "496c980a-730b-40ed-9190-645a044c204f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "reading all the rows and column data in the first page",
+              "fullTitle": "Handle tables reading all the rows and column data in the first page",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "//get all the rows\ncy.get(\"table[class ='table table-bordered table-hover']>tbody>tr\").each(($row, index, $rows) => {\n  //rows-all the rows in the tablw\n  //index - indexes of all the rows in the table\n  //$row - a variable that is keeping the current row of the table\n  cy.wrap($row).within(() => {\n    cy.get(\"td\").each(($col, index, $cols) => {\n      cy.log($col.text());\n    });\n  });\n});",
+              "err": {},
+              "uuid": "018d8cde-4968-46f4-9e3b-87c56305c516",
+              "parentUUID": "496c980a-730b-40ed-9190-645a044c204f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "reading data with pagination",
+              "fullTitle": "Handle tables reading data with pagination",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "let totalPages;\n//first find the total number of pages \ncy.get(\"div[class='col-sm-6 text-end']\").then(e => {\n  let MypageNumberText = e.text(); //this variable contains this value Showing 1 to 10 of 18910 (1891 Pages)\n  totalPages = MypageNumberText.substring(MypageNumberText.indexOf(\"(\") + 1, MypageNumberText.indexOf(\"Pages\") - 1);\n  cy.log(`total number of pages ${totalPages}`);\n});",
+              "err": {},
+              "uuid": "1ad37d1d-c36d-4abc-946c-8eab41f18767",
+              "parentUUID": "496c980a-730b-40ed-9190-645a044c204f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "reading a few pages fromt the entire page",
+              "fullTitle": "Handle tables reading a few pages fromt the entire page",
+              "timedOut": null,
+              "duration": 5140,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\table.cy.js\\\\Handle tables -- reading a few pages fromt the entire page -- before each hook login (failed).png\"\n    ]\n  ]\n}",
+              "code": "//lets read 5 pages\nlet pages = 5;\nfor (let p = 1; p <= pages; p++) {\n  if (pages > 1) {\n    //cy.log('Active pages =' +p)\n    cy.get(\".row>div>ul>li:nth-child(\" + p + \")\").click();\n    cy.wait(5000);\n    cy.get(\"table.table-bordered.table-hover tbody tr\").each(($row, index, $rows) => {\n      cy.wrap($row).within(() => {\n        cy.get('td:nth-child(3) ').then(e => {\n          cy.log(e.text()); //get the email address\n        });\n      });\n    });\n  }\n}",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > $.plot is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Handle tables`",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > $.plot is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Handle tables`\n    at Object.success (https://demo.opencart.com/admin/index.php?route=common/dashboard&user_token=523e0c1811b2e2f19077ece859ece901:423:6)\n    at c (https://demo.opencart.com/admin/view/javascript/jquery/jquery-3.6.0.min.js:2:28327)\n    at Object.fireWith [as resolveWith] (https://demo.opencart.com/admin/view/javascript/jquery/jquery-3.6.0.min.js:2:29072)\n    at l (https://demo.opencart.com/admin/view/javascript/jquery/jquery-3.6.0.min.js:2:79901)\n    at XMLHttpRequest.<anonymous> (https://demo.opencart.com/admin/view/javascript/jquery/jquery-3.6.0.min.js:2:82355)",
+                "diff": null
+              },
+              "uuid": "6d3f5e0b-45f5-45af-a871-ed257db7a324",
+              "parentUUID": "496c980a-730b-40ed-9190-645a044c204f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "6d3f5e0b-45f5-45af-a871-ed257db7a324"
+          ],
+          "pending": [
+            "ed4feda1-e3cc-40f7-8702-d6aa7683e5d9",
+            "163ae02b-2147-490f-ba9e-4afb6f70687d",
+            "018d8cde-4968-46f4-9e3b-87c56305c516",
+            "1ad37d1d-c36d-4abc-946c-8eab41f18767"
+          ],
+          "skipped": [],
+          "duration": 5140,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

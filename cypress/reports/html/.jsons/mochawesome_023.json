@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-04-22T09:29:54.749Z",
+    "end": "2024-04-22T09:30:15.909Z",
+    "duration": 21160,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c7d7c47b-31e6-461a-a335-30f25bedeed9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\screenshotAndVideo.cy.js",
+      "file": "cypress\\e2e\\screenshotAndVideo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ad4daa4c-a13e-438c-9e7a-15016aa0a595",
+          "title": "screenshots and videos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "automatic screenshot and video taking using cLI",
+              "fullTitle": "screenshots and videos automatic screenshot and video taking using cLI",
+              "timedOut": null,
+              "duration": 15536,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\screenshotAndVideo.cy.js\\\\screenshots and videos -- automatic screenshot and video taking using cLI (failed).png\"\n    ]\n  ]\n}",
+              "code": "//capturing a screenshot automatically when a failure happens\n// and video- only when you execute through cli\ncy.get(\"body > main:nth-child(3) > div:nth-child(1) > nav:nth-child(1) > div:nth-child(3) > ul:nth-child(1) > li:nth-child(4) > a:nth-child(1)\").click();\ncy.get(\"div[id='content'] h2\").should(\"have.text\", 'Cameras');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `div[id='content'] h2`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `div[id='content'] h2`, but never found it.\n    at Context.eval (webpack://cypress-automation/./cypress/e2e/screenshotAndVideo.cy.js:15:40)",
+                "diff": null
+              },
+              "uuid": "02a1b145-d560-4a51-97dc-f0e1ee625176",
+              "parentUUID": "ad4daa4c-a13e-438c-9e7a-15016aa0a595",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "02a1b145-d560-4a51-97dc-f0e1ee625176"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 15536,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -21,3 +21,7 @@ import './commands'
 require('cypress-xpath') //for cypress xpath
 
 import 'cypress-mochawesome-reporter/register'   //renable to generate report
+
+// cypress/support/e2e.js
+
+require('cypress-maildev');

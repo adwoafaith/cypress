@@ -1,18 +1,24 @@
 [
     {
-        "username":"adwoafaith49@gmail.com",
-        "password":"Mytesting055!"
+        "username":"codingfrancis100@gmail.com",
+        "password":"Password@123"
+        
+     
     },
     {
-        "username":"adwoafaith49@gmail.com",
-        "password":"testing055!"
+        "username":"codingfrancis100@gmai.com",
+        "password":"Password@12"
+       
+    },
+   
+    {
+      
+        "username":"codingfrancis100@gmail.co",
+        "password":"Password@12"
     },
     {
-        "username":"adwoafaith49@gmail.com",
-        "password":"Mytesting055!"
-    },
-    {
-        "username":"adwofaith49@gmail.com",
-        "password":"Mytestng055!"
+
+        "username":"co",
+        "password":"2"
     }
 ]
